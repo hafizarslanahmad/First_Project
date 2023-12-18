@@ -1,0 +1,35 @@
+<h1>Sign In</h1>
+
+<%= form_with url: sign_in_path do |form| %>
+
+<div class="mt-3">
+    <%= form.label :First_name%>
+    <br>
+    <%= form.text_field :first_name , class:"form_control" , placeholder:"First name"%>
+</div>
+
+<div class="mt-3">
+    <%= form.label :Lasst_name %>
+    <br>
+    <%= form.text_field :last_name ,class:"form_control" ,placeholder:"Last name"%>
+</div>
+
+
+<div class="mt-3">
+    <%= form.label :Email %>
+    <br>
+    <%= form.text_field :email, class:"form_control" ,placeholder:"Email" %>
+</div>
+
+<div class="mt-3">
+    <%= form.label :Password %>
+    <br>
+    <%= form.password_field :password , class:"form_control" ,placeholder:"Password"%>
+</div>
+
+<div class="mt-3">
+    <%= form.submit "sign in" , class: "btn btn-primary" %>
+</div>
+
+
+<% end %>

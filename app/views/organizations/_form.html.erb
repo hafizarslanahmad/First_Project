@@ -1,0 +1,40 @@
+<%= form_with model: organization , data:{turbo:false} do |form|%>
+  <% if form.object.errors.any?%>
+    <div class= "alert alert-danger">
+      <% form.object.errors.full_messages.each do |message|%>
+    <div> <%= message%></div>
+  <% end%>
+  </div>
+ <% end%>
+
+<div class="mt-3">
+    <%= form.label :Name%>
+    <br>
+    <%= form.text_field :name , class:"form_control" , placeholder:"Name"%>
+</div>
+
+<div class="mt-3">
+    <%= form.label :Address %>
+    <br>
+    <%= form.text_field :address ,class:"form_control" ,placeholder:"Address"%>
+</div>
+
+
+<div class="mt-3">
+    <%= form.label :Contact_no %>
+    <br>
+    <%= form.text_field :contect_no, class:"form_control" ,placeholder:"contact" %>
+</div>
+
+<div class="mt-3">
+    <%= form.label :Category %>
+    <br>
+    <%= form.select :category , Organization.categories.keys%>
+</div>
+
+<div class="mt-3">
+    <%= form.submit "save" , class: "btn btn-primary" %>
+</div>
+
+
+<% end %>

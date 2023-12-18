@@ -1,0 +1,31 @@
+<h1> Show data </h1>
+
+<table class= "table">
+  
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Contact_no</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+     <%@organizations.each do |organization| %>
+      <tr>
+        <td><%= organization.id%></td>
+        <td><%= organization.name%></td>
+        <td><%= organization.address%></td>
+        <td><%= organization.contect_no%></td>
+        <td><%= organization.category%></td>
+        <td><%=  link_to "Delete", organization, data: { 'turbo-method': :delete, 'turbo-confirm':  "Are you sure?"}%></td>
+      </tr>
+    <%end%>
+    
+  </tbody>
+     
+</table>
+
